@@ -1,16 +1,21 @@
+// Created by Derek Kennard
+// Solution: SES
+// Project Name: SES
+// File Name: Startup.cs
+// Created on: 03/14/2021 at 11:43 PM
+// Edited on: 06/05/2021 at 1:22 PM
+// Developed and Copyrighted by Derek "Doctork" Kennard
+
+#region imports
+
+using Amazon.SimpleEmail;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Amazon.SimpleEmail;
+
+#endregion
 
 namespace SES
 {
@@ -34,10 +39,7 @@ namespace SES
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
 
             app.UseHttpsRedirection();
 
@@ -45,10 +47,7 @@ namespace SES
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }
