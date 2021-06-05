@@ -14,8 +14,8 @@ namespace SES.Controllers
     public class SESController : ControllerBase
     {
         private readonly IAmazonSimpleEmailService _amazonSimpleEmailService;
-        private string _fromAddress = "derek.kennard@gmail.com";
-        private string _toAddress = "derek.kennard@gmail.com";
+        private string _fromAddress = "youre_address@email.com";
+        private string _toAddress = "youre_address@email.com";
         private string _subject = "SES";
         private string _body = "<h1>It Worked</h1> <p>So Happy</p>";
 
